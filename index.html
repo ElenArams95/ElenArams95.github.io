@@ -1,92 +1,547 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-   <meta charset="utf-8">
-   <title>Elen Aramyan</title>
-   <link rel="stylesheet" href="css/default.css">
-   <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elen Aramyan | Senior Java & Go Developer</title>
+    <meta name="description" content="Senior Java & Go Developer with 10+ years building enterprise-grade distributed systems in fintech, payments, and cloud infrastructure. Open to Remote B2B.">
+    <meta name="keywords" content="Senior Java Developer, Senior Golang Developer, Senior Go Developer, Lead Software Engineer, Fintech Developer, Payments Developer, Visa, Mastercard, AWS, Microservices, Remote B2B, Java Contractor Europe">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-   <header>
-      <nav id="global-nav">
-         <ul id="nav">
-            <li><a href="#general-description">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#resume">RESUME</a></li>
-         </ul>
-      </nav>
-      <div id="general-description">
-         <h1>I'm Elen.</h1>
-         <h3>My lifestyle is to automate everything everywhere and
-            every time. As a multi-faceted individual, I'm skilled in Software development and Software Test Automation.
-            My desires are to expand my skills and experience by providing quality work while having fun. See <a
-               href="#about" id="link-style">here</a>
-            and learn more <a href="#about" id="link-style">about me</a>.</h3>
-      </div>
-   </header>
-   <section id="about">
-      <div class="middle">
-         <div>
-            <img id="profile-picture" src="images/profile.jpg" />
-         </div>
-         <div>
-            <h2>About Me</h2>
-            <p>Hello! I'm a software developer with 3+ years experience in development, testing and maintenance of the
-               software.
-               I have experience in writing with Java, Python, and Javascript programming languages and also specialized
-               in CI/CD and automation.
-            </p>
-            <div class="middle">
-               <div>
-                  <h2>Contact Details</h2>
-                  <div>
-                     <span>Elen Aramyan</span><br>
-                     <span>Arabkir, 116<br>
-                        0051, Yerevan
-                     </span><br>
-                     <span>(055)444-953</span><br>
-                     <span>helen.aramyan@gmail.com</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <section id="resume">
-      <div class="middle">
-         <div>
-            <h1>Experience</h1>
-         </div>
-         <div>
-            <div>
-               <div>
-                  <h3>Workfront</h3>
-                  <p>Software Engineer 2019 - present</p>
-               </div>
-               <div>
-                  <h3>Workfront</h3>
-                  <p>Global Test Automation Engineer 2018 - 2019</p>
-               </div>
-               <div>
-                  <h3>Webb Fontaine</h3>
-                  <p>Quality Assurance Automation Engineer 2017 - 2018</p>
-               </div>
-               <div>
-                  <h3>Ideal Solutions LLC</h3>
-                  <p>Software Quality Assurance Engineer 2016 - 2017</p>
-               </div>
-            </div>
-         </div>
-      </div>   
-   </section>
-   <footer class="middle">
-      <ul id="contacts">
-         <li>Contacts</li>
-         <li>Email Address: helen.aramyan@gmail.com</li>
-         <li>Phone Number: 055444953</li>
-      </ul>
-   </footer>
-</body>
+    <!-- Particle background -->
+    <canvas id="particles"></canvas>
 
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">EA</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">elen@dev ~ %</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command" id="typewriter"></span>
+                        <span class="terminal-cursor">|</span>
+                    </p>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-name">Elen Aramyan</span>
+            </h1>
+            <p class="hero-subtitle">Senior Java & Go Developer | Lead Engineer</p>
+            <p class="hero-description">
+                10+ years building enterprise-grade distributed systems in
+                <span class="highlight">fintech</span>,
+                <span class="highlight">payments</span>, and
+                <span class="highlight">cloud infrastructure</span>.
+            </p>
+            <div class="hero-tags">
+                <span class="tag">ex-Adobe</span>
+                <span class="tag">1M+ Card Migration</span>
+                <span class="tag">Visa / Mastercard</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Open to Remote B2B</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>When a bank needs to migrate a million cardholders seamlessly, or an enterprise platform needs its monolith rearchitected into 30+ microservices, or Visa and Mastercard integrations need to work flawlessly in production &mdash; that's where I come in.</p>
+                    <p>I'm a <strong>Senior Java & Go Developer</strong> and <strong>Lead Engineer</strong> with over a decade of experience building systems that handle millions of transactions. Currently leading backend engineering at a <strong>licensed digital banking platform</strong> processing payments across multiple markets.</p>
+                    <p>Previously at <strong>Adobe</strong>, I worked on Workfront and Fusion &mdash; decomposing monoliths, building enterprise integrations (Outlook, Salesforce, Jira), owning the full DevOps lifecycle, and cutting deployment times from 4 hours to 20 minutes.</p>
+                    <p>I thrive on complexity: payment schemes, regulatory compliance, high-throughput event-driven systems, and leading international engineering teams.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="1">0</span>
+                        <span class="stat-suffix">M+</span>
+                        <span class="stat-label">Cardholders Migrated</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="30">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Microservices Built</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-suffix">K+ TPS</span>
+                        <span class="stat-label">Payment Processing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span> Experience
+            </h2>
+            <div class="timeline">
+                <!-- Current Role -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Lead Senior Java / Go Developer</h3>
+                                <p class="timeline-company">Licensed Digital Banking Platform</p>
+                            </div>
+                            <span class="timeline-date">Dec 2022 &mdash; Present</span>
+                        </div>
+                        <p class="timeline-description">Leading backend engineering for a card issuing platform serving 20M+ cardholders across multiple markets.</p>
+                        <ul class="timeline-achievements">
+                            <li>Led full migration of <strong>1M+ cardholders</strong> between issuing banks &mdash; zero downtime, full regulatory compliance</li>
+                            <li>Architected integrations with <strong>Visa</strong> (VTS, Visa Direct), <strong>Mastercard</strong> (MDES, Mastercard Send), <strong>MPGS</strong>, UnionPay</li>
+                            <li>Built real-time payment processing pipelines handling <strong>10K+ TPS</strong></li>
+                            <li>Designed event-driven settlement, reconciliation, and dispute systems</li>
+                            <li>Implemented <strong>3DS2 authentication</strong>, tokenization, and PCI-DSS compliant card lifecycle management</li>
+                            <li>Integrated core banking systems (ledger, KYC, transaction management)</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Java 17+</span>
+                            <span>Go</span>
+                            <span>Spring Boot</span>
+                            <span>Kafka</span>
+                            <span>PostgreSQL</span>
+                            <span>Redis</span>
+                            <span>AWS</span>
+                            <span>Kubernetes</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adobe Fusion -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Senior Software Developer</h3>
+                                <p class="timeline-company">Adobe &mdash; Fusion</p>
+                            </div>
+                            <span class="timeline-date">Jul 2021 &mdash; Jul 2022</span>
+                        </div>
+                        <p class="timeline-description">Core backend engineer on the workflow automation platform connecting 200+ enterprise applications.</p>
+                        <ul class="timeline-achievements">
+                            <li>Designed and built production connectors: <strong>Microsoft Outlook, Salesforce, Jira, Workday</strong></li>
+                            <li>Architected connector framework handling <strong>5M+ daily API calls</strong> across customer tenants</li>
+                            <li>Built OAuth2 and API key authentication flows for third-party integrations</li>
+                            <li>Drove <strong>Go adoption</strong> for high-performance microservices alongside Java codebase</li>
+                            <li>Mentored junior and mid-level engineers, led code reviews and architecture discussions</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Java</span>
+                            <span>Go</span>
+                            <span>Spring Boot</span>
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>REST</span>
+                            <span>OAuth2</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adobe Workfront -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Developer II &rarr; Senior Developer</h3>
+                                <p class="timeline-company">Adobe &mdash; Workfront</p>
+                            </div>
+                            <span class="timeline-date">Dec 2017 &mdash; Jul 2021</span>
+                        </div>
+                        <p class="timeline-description">Backend engineer on Workfront &mdash; an enterprise project management platform processing millions of daily requests.</p>
+                        <ul class="timeline-achievements">
+                            <li>Led disaggregation of monolith into <strong>30+ independently deployable microservices</strong></li>
+                            <li>Reduced deployment time from <strong>4 hours to 20 minutes</strong> through CI/CD automation</li>
+                            <li>Rewrote legacy Java services &mdash; <strong>60% faster responses</strong>, reduced technical debt by 40%</li>
+                            <li>Improved test coverage from 45% to <strong>85%</strong></li>
+                            <li>Optimized high-load PostgreSQL and Oracle queries &mdash; reduced p95 latency by <strong>50%</strong></li>
+                            <li>Owned full DevOps lifecycle: Jenkins, Docker, AWS infrastructure, monitoring</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>Hibernate</span>
+                            <span>PostgreSQL</span>
+                            <span>Oracle</span>
+                            <span>Jenkins</span>
+                            <span>Docker</span>
+                            <span>SonarQube</span>
+                            <span>DataDog</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Webb Fontaine -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Developer</h3>
+                                <p class="timeline-company">Webb Fontaine</p>
+                            </div>
+                            <span class="timeline-date">Oct 2016 &mdash; Dec 2017</span>
+                        </div>
+                        <p class="timeline-description">Software engineer at a global leader in customs and trade automation, providing AI-powered solutions to governments across 10+ countries.</p>
+                        <ul class="timeline-achievements">
+                            <li>Developed Java-based automation frameworks for customs declaration processing</li>
+                            <li>Built financial application modules for duty calculation and tariff classification</li>
+                            <li>Integrated with government regulatory systems and cross-border data exchange protocols</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Java</span>
+                            <span>Spring</span>
+                            <span>REST</span>
+                            <span>Oracle DB</span>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IBM -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Developer</h3>
+                                <p class="timeline-company">IBM ISTC</p>
+                            </div>
+                            <span class="timeline-date">Mar 2016 &mdash; Oct 2016</span>
+                        </div>
+                        <p class="timeline-description">Built FoodMiX &mdash; an AI-powered recipe recommendation startup from the ground up within IBM's startup incubator.</p>
+                        <div class="timeline-tech">
+                            <span>Java</span>
+                            <span>Spring</span>
+                            <span>REST</span>
+                            <span>PostgreSQL</span>
+                            <span>ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span> Tech Stack
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">&#9874;</div>
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Go</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">&#9729;</div>
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Kubernetes</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Terraform</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">&#9881;</div>
+                    <h3>Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Spring Boot</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Kafka</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">gRPC</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">REST APIs</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">&#128206;</div>
+                    <h3>Databases</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">PostgreSQL</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Redis</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Oracle</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">&#128176;</div>
+                    <h3>Payments & Fintech</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Visa / Mastercard</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">3DS2 / Tokenization</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PCI-DSS</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Core Banking</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">&#129302;</div>
+                    <h3>Architecture & AI</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">DDD / CQRS / Saga</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Event-Driven</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">RAG Pipelines</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">LLM Integration</span>
+                            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section section-alt" id="achievements">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span> Key Achievements
+            </h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">&#127974;</div>
+                    <h3>Bank-to-Bank Migration</h3>
+                    <p>Led the full migration of 1M+ cardholders between issuing banks with zero downtime and full regulatory compliance across multiple markets.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">&#128179;</div>
+                    <h3>Payment Scheme Integrations</h3>
+                    <p>Architected and delivered direct integrations with Visa (VTS, Visa Direct), Mastercard (MDES, Mastercard Send), MPGS, and UnionPay.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">&#9889;</div>
+                    <h3>10K+ TPS Processing</h3>
+                    <p>Built real-time payment authorization pipelines handling 10,000+ transactions per second with sub-100ms latency.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">&#128640;</div>
+                    <h3>Monolith to Microservices</h3>
+                    <p>Decomposed Adobe Workfront's monolith into 30+ independently deployable microservices used by Fortune 500 clients.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">&#9201;</div>
+                    <h3>Deployment: 4h to 20min</h3>
+                    <p>Automated the entire CI/CD pipeline, cutting deployment time by 92% and enabling 3+ releases per day.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">&#127760;</div>
+                    <h3>Enterprise Connectors</h3>
+                    <p>Built production integrations for Adobe Fusion: Outlook, Salesforce, Jira, Workday &mdash; handling 5M+ daily API calls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section" id="blog">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span> Blog
+            </h2>
+            <p class="section-subtitle">Thoughts on engineering, payments, and distributed systems.</p>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                        <span class="blog-tag">Payments</span>
+                    </div>
+                    <h3>How We Migrated 1M Cardholders With Zero Downtime</h3>
+                    <p>A deep dive into the architecture and strategies behind migrating a million cardholders between issuing banks without a single second of service interruption.</p>
+                    <a href="#" class="blog-link">Read more &rarr;</a>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                        <span class="blog-tag">Architecture</span>
+                    </div>
+                    <h3>Event-Driven Settlement Systems in Fintech</h3>
+                    <p>Why event-driven architecture is the right choice for building settlement and reconciliation systems, and the patterns that make it work at scale.</p>
+                    <a href="#" class="blog-link">Read more &rarr;</a>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                        <span class="blog-tag">Java vs Go</span>
+                    </div>
+                    <h3>When to Use Go Over Java in Payment Systems</h3>
+                    <p>After years of working with both languages in production payment systems, here's my framework for choosing the right tool for each microservice.</p>
+                    <a href="#" class="blog-link">Read more &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">06.</span> Get in Touch
+            </h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>I'm currently open to <strong>Remote B2B contracts</strong> for Senior Java Developer / Lead Go Developer roles, especially in <strong>fintech and payments</strong>.</p>
+                    <p>Whether you have a question, a project, or just want to say hi &mdash; my inbox is always open.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/helen-golang-java-ai-engineer/" target="_blank" class="contact-card">
+                        <div class="contact-icon">in</div>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:helen.aramyan@gmail.com" class="contact-card">
+                        <div class="contact-icon">@</div>
+                        <span>Email</span>
+                    </a>
+                </div>
+                <div class="contact-availability">
+                    <div class="availability-dot"></div>
+                    <span>Available for Remote B2B contracts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed & Built by Elen Aramyan</p>
+        <p class="footer-sub">&copy; 2026. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
