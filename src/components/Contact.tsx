@@ -19,6 +19,10 @@ export default function Contact() {
               <div className="contact-icon">@</div>
               <span>Email</span>
             </a>
+            <a href="https://wa.me/393497612650" target="_blank" rel="noreferrer" className="contact-card">
+              <div className="contact-icon">wa</div>
+              <span>WhatsApp</span>
+            </a>
           </div>
           <div className="contact-availability">
             <div className="availability-dot" />
